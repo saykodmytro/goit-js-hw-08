@@ -11,7 +11,9 @@ formRefs.addEventListener('input', throttle(onInputForm, 500));
 formRefs.addEventListener('submit', onSubmitForm);
 
 function onInputForm(evt) {
-  formData[evt.target.name] = evt.target.value;
+  // formData[evt.target.name] = evt.target.value;
+  formData.email = formRefs.email.value;
+  formData.message = formRefs.message.value;
 
   const formDataJSON = JSON.stringify(formData);
   localStorage.setItem(STORAGE_KEY, formDataJSON);
@@ -35,9 +37,6 @@ function onReloadPage() {
   if (jsontLocalStorage) {
     const parseLocalStorage = JSON.parse(jsontLocalStorage);
     const { email, message } = parseLocalStorage;
-
-    formData.email = email;
-    formData.message = message;
 
     formRefs.email.value = email;
     formRefs.message.value = message;
