@@ -36,6 +36,9 @@ function onReloadPage() {
     const parseLocalStorage = JSON.parse(jsontLocalStorage);
     const { email, message } = parseLocalStorage;
 
+    formData.email = email;
+    formData.message = message;
+
     formRefs.email.value = email;
     formRefs.message.value = message;
   }
