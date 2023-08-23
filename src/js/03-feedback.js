@@ -40,5 +40,8 @@ function onReloadPage() {
 
     formRefs.email.value = email;
     formRefs.message.value = message;
+
+    formData.email = email;
+    formData.message = message;
   }
 }
